@@ -2,7 +2,7 @@
 
 The backend is configured to run on microsoft SQL database as shown in the architecture below.
 
-![Architecture](../utibuHealth/images/Utibu%20Health%20System%20Architecture.png)
+![Architecture](./utibuHealth/images/Utibu%20Health%20System%20Architecture.png)
 
 # Spinning the server
 
