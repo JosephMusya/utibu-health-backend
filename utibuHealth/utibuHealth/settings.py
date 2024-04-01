@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     
 
     'api.apps.ApiConfig',
-    'corsheaders'
+    'corsheaders',
+    
+    'sql_server.pyodbc',
+    'django_pyodbc',
 ]
 
 
@@ -83,10 +86,24 @@ WSGI_APPLICATION = 'utibuHealth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'utibuHealth',
+        'USER': 'sa',
+        'PASSWORD': 'trialUtibu',
+        'HOST': 'sqlexpress', 
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     }
 }
 
